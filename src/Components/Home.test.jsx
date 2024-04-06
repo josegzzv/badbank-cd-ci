@@ -6,7 +6,7 @@ import Home from './Home';
 describe('Home Component', () => {
   test('renders welcome message', () => {
     render(<Home />);
-    expect(screen.getByText(/Welcome to NOT JAG Bad Bank/i)).toBeInTheDocument();
+    expect(screen.getByText(/Welcome to JAG Bad Bank/i)).toBeInTheDocument();
   });
 
   test('renders the create account button', () => {
