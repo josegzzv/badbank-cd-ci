@@ -14,3 +14,4 @@ describe('Home Component', () => {
     expect(screen.getByRole('link', { name: /create account/i })).toBeInTheDocument();
   });
 }); 
+  
