@@ -8,9 +8,9 @@ jobs:
       matrix:
         node-version: [20.x]
     steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+      - uses: actions/checkout@v3
+      - name: Use Node.js 20.x
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm install
@@ -23,7 +23,7 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       # Setup AWS CLI
       - uses: aws-actions/configure-aws-credentials@v1
@@ -37,7 +37,3 @@ jobs:
         run: |
           aws s3 cp ./build s3://${{ secrets.AWS_S3_BUCKET }} --recursive --acl public-read --content-type "text/javascript" --exclude "*" --include "*.js"
           aws s3 cp ./build s3://${{ secrets.AWS_S3_BUCKET }} --recursive --acl public-read --exclude "*.js"
-
-        env:
-          AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
-          AWS_REGION: "us-east-1" # optional: defaults to us-east-1 no funcionó para v1
