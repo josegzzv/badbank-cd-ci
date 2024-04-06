@@ -40,4 +40,4 @@ jobs:
 
         env:
           AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
-          AWS_REGION: "us-east-1" # optional: defaults to us-east-1
+          AWS_REGION: "us-east-1" # optional: defaults to us-east-1 no funcionó para v1
