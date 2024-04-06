@@ -24,6 +24,7 @@ jobs:
         
       - name: Run tests
         run: npm test
+        
 
   deploy:
     needs: build_and_test
