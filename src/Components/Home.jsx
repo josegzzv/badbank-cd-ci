@@ -15,7 +15,7 @@ function Home() {
                 Explore a new way to manage your finances! Join us and
                 experience digital banking at its finest. Create your account
                 today and start your journey towards smarter and more efficient
-                financial management.
+                financial management. Cambio Generado 8 Abril 2024 8:51AM
               </p>
               <a href="/create-account" className="btn btn-primary">
                 Create Account
